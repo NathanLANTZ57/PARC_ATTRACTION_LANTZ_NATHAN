@@ -1,27 +1,78 @@
-# Parc
+# 🌱 SAE5 - Jardin de Cocagne  
+**Auteurs** : CHEVALIER Noemy & LANTZ Nathan  
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.1.0.
+## 🚀 Environnement utilisé  
+- **GitHub** et **Docker** pour la gestion du projet et des conteneurs.  
+- **MEAN STACK** : Angular, Node.js, MongoDB et Express.js.  
+- **Karma** et **Jasmine** pour les tests unitaires avec Angular.  
 
-## Development server
+---
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## 🎉 Bienvenue dans notre projet  
+Vous trouverez ici tout le contenu de notre SAE5. Ce document détaille les éléments et fichiers disponibles dans ce dépôt :  
 
-## Code scaffolding
+### 📂 1. Dossier `.github`  
+Ce dossier contient notre **pipeline CI/CD**.  
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Ce pipeline GitHub Actions est déclenché lors des push ou pull requests sur la branche `master`. Il exécute deux jobs :  
+- **Client Angular** : Télécharge le code, configure Node.js, installe les dépendances, exécute les tests, puis génère le build.  
+- **Serveur Node.js** : Télécharge le code, configure Node.js, installe les dépendances et exécute les tests.
+Cela assure l'intégration continue et la validation du client et du serveur.
 
-## Build
+---
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### 🌐 2. Dossier `client`  
+Contient tout le code côté client, développé avec **Angular**.  
 
-## Running unit tests
+- Les fichiers applicatifs sont situés dans `client/src/app/` :  
+  - **HTML** : Structure des pages.  
+  - **SCSS** : Styles de l'application.  
+  - **TS** : Logique métier.  
+  - **Spec.ts** : Tests unitaires.  
+- Un fichier `Dockerfile` est présent pour construire l'application Angular, accessible via [http://localhost:4200](http://localhost:4200).  
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+---
 
-## Running end-to-end tests
+### 🔧 3. Dossier `server`  
+Contient tout le code côté serveur, développé avec **Node.js**.  
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+- **Code serveur** : Situé dans `server/src/server.ts`, il gère l'API et lance le serveur sur [http://localhost:3000](http://localhost:3000).  
+- **Base de données** : Le fichier `saejardindecocagne.json` contient les données sous format JSON.  
+- **Fichier `.env`** : Configure les variables sensibles comme :  
+  - URI MongoDB.  
+  - Port 3000.  
+  - Identifiants administrateurs (non stockés dans la base de données pour des raisons de sécurité).  
+- **Dockerfile** : Permet de lancer le serveur via la commande `docker-compose up --build`.  
 
-## Further help
+---
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+### 🗂️ 4. Racine du projet  
+À la racine, vous trouverez le fichier **`docker-compose.yml`** qui orchestre les `Dockerfile` des dossiers `client` et `server`, facilitant le lancement complet de l'application.  
+
+---
+
+## 🐳 Lancement du projet via Docker
+
+1. Clonez le projet complet depuis GitHub ou alors télécharger le dossier en ZIP :  
+   ```bash
+   git clone https://github.com/NathanLANTZ57/SAE5_LANTZ_CHEVALIER.git
+   ```
+2. Accédez à la racine du projet (le dossier contenant `.github`, `client`, et `server`).  
+3. Ouvrez un terminal PowerShell.  
+4. Lancez la commande suivante :  
+   ```bash
+   docker-compose up --build
+   ```
+5. Une fois le chargement terminé, vous verrez :  
+   - 🚀 **Serveur lancé sur [http://localhost:3000](http://localhost:3000)**.  
+   - ✅ **Connecté à MongoDB**.  
+
+---
+
+## 📖 Documentation API Swagger
+
+La documentation API est accessible à l'adresse suivante : [http://localhost:3000/api/documentation](http://localhost:3000/api/documentation) lorsque l'application est démarrée via Docker.  
+Elle utilise **Swagger-ui-express** et un fichier `swagger.json` situé dans le dossier `server`, avec une configuration simplifiée en deux lignes de code dans server.ts.
+
+Notre documentation API est disponible ici directement si vous voulez la visualiser sans lancer l'application :  
+[**Documentation SWAGGER**](https://app.swaggerhub.com/apis-docs/NATHANLANTZ57560/SAE5/1.0.0)
