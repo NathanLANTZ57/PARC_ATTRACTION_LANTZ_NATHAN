@@ -11,7 +11,7 @@ Vous trouverez ici tout le contenu du site Parc-Attraction. Ce document détaill
 
 ---
 
-### 🌐 2. Dossier `parc`  
+### 🌐 1. Dossier `parc`  
 Contient tout le code côté client, développé avec **Angular**.  
 
 - Les fichiers applicatifs sont situés dans `parc/src/app/` :  
@@ -23,7 +23,7 @@ Contient tout le code côté client, développé avec **Angular**.
 
 ---
 
-### 🔧 3. Dossier `python`  
+### 🔧 2. Dossier `python`  
 Contient tout le code côté serveur, développé avec **Python**.  
 
 - **Code serveur** : Situé dans `python/app.py`, il gère l'API et lance le serveur sur [http://localhost:5000](http://localhost:5000).  
@@ -32,7 +32,7 @@ Contient tout le code côté serveur, développé avec **Python**.
 
 ---
 
-### 🗂️ 4. Racine du projet  
+### 🗂️ 3. Racine du projet  
 À la racine, vous trouverez le fichier **`docker-compose.yml`** qui orchestre les `Dockerfile` des dossiers `parc` et `python`, facilitant le lancement complet de l'application.  
 
 ---
