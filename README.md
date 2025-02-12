@@ -14,7 +14,7 @@ Vous trouverez ici tout le contenu du site Parc-Attraction. Ce document détaill
 ### 🌐 2. Dossier `parc`  
 Contient tout le code côté client, développé avec **Angular**.  
 
-- Les fichiers applicatifs sont situés dans `client/src/app/` :  
+- Les fichiers applicatifs sont situés dans `parc/src/app/` :  
   - **HTML** : Structure des pages.  
   - **SCSS** : Styles de l'application.  
   - **TS** : Logique métier.  
