@@ -1,35 +1,78 @@
-Projet maintenance applicative
+# 🌱 SAE5 - Jardin de Cocagne  
+**Auteurs** : CHEVALIER Noemy & LANTZ Nathan  
 
-Vous avez un projet de parc d'attraction, pour l'instant, on peut uniquement ajouter des attractions (connexion administrateur) et les visualiser (visiteur).
-Il vous faut reprendre le projet et le continuer.
-Certains éléments du projet sont à reprendre, mais ne sont pas explicites dans le cahier des charges, c'est à vous d'identifier les problèmes et de les corriger.
+## 🚀 Environnement utilisé  
+- **GitHub** et **Docker** pour la gestion du projet et des conteneurs.  
+- **MEAN STACK** : Angular, Node.js, MongoDB et Express.js.  
+- **Karma** et **Jasmine** pour les tests unitaires avec Angular.  
 
-Si vous avez des questions n'hésitez pas
+---
 
-Notation :
-- Mise en place des fonctionnalités décrites dans le cahier des charges
-- Respect des consignes
-- Qualité de code
-- Commit réguliers et clairs
+## 🎉 Bienvenue dans notre projet  
+Vous trouverez ici tout le contenu de notre SAE5. Ce document détaille les éléments et fichiers disponibles dans ce dépôt :  
 
-Quelques pistes sur quoi commencer :
-- Faire le bilan de l'existant
-- Explorer le projet
-- Établir un début de schéma BDD
+### 📂 1. Dossier `.github`  
+Ce dossier contient notre **pipeline CI/CD**.  
 
-Si vous avez des soucis lors de l'installation du projet, vous m'appelez
-Mise en place du projet :
-- Faite un clone du projet
-- Faite un nouveau repository et me l'envoyer à l'adresse faivrem22@gmail.com avec <NOM> et <PRENOM>
-Lancement du projet :
-- Build le docker compose (dans le dossier du projet dans un terminal : docker compose build)
-- Lancer le docker compose (dans le dossier du projet dans un terminal : docker compose up)
-Une fois que tout est fini :
-- Aller dans le container python (en console : docker compose exec api sh)
-  - Lancer le script python : init.py (python3 init.py)
-- Le projet est lancé
-Pour tester : 
-Adresse angular :
-http://localhost:4200/accueil
-Adresse api :
-http://127.0.0.1:5000/
+Ce pipeline GitHub Actions est déclenché lors des push ou pull requests sur la branche `master`. Il exécute deux jobs :  
+- **Client Angular** : Télécharge le code, configure Node.js, installe les dépendances, exécute les tests, puis génère le build.  
+- **Serveur Node.js** : Télécharge le code, configure Node.js, installe les dépendances et exécute les tests.
+Cela assure l'intégration continue et la validation du client et du serveur.
+
+---
+
+### 🌐 2. Dossier `client`  
+Contient tout le code côté client, développé avec **Angular**.  
+
+- Les fichiers applicatifs sont situés dans `client/src/app/` :  
+  - **HTML** : Structure des pages.  
+  - **SCSS** : Styles de l'application.  
+  - **TS** : Logique métier.  
+  - **Spec.ts** : Tests unitaires.  
+- Un fichier `Dockerfile` est présent pour construire l'application Angular, accessible via [http://localhost:4200](http://localhost:4200).  
+
+---
+
+### 🔧 3. Dossier `server`  
+Contient tout le code côté serveur, développé avec **Node.js**.  
+
+- **Code serveur** : Situé dans `server/src/server.ts`, il gère l'API et lance le serveur sur [http://localhost:3000](http://localhost:3000).  
+- **Base de données** : Le fichier `saejardindecocagne.json` contient les données sous format JSON.  
+- **Fichier `.env`** : Configure les variables sensibles comme :  
+  - URI MongoDB.  
+  - Port 3000.  
+  - Identifiants administrateurs (non stockés dans la base de données pour des raisons de sécurité).  
+- **Dockerfile** : Permet de lancer le serveur via la commande `docker-compose up --build`.  
+
+---
+
+### 🗂️ 4. Racine du projet  
+À la racine, vous trouverez le fichier **`docker-compose.yml`** qui orchestre les `Dockerfile` des dossiers `client` et `server`, facilitant le lancement complet de l'application.  
+
+---
+
+## 🐳 Lancement du projet via Docker
+
+1. Clonez le projet complet depuis GitHub ou alors télécharger le dossier en ZIP :  
+   ```bash
+   git clone https://github.com/NathanLANTZ57/SAE5_LANTZ_CHEVALIER.git
+   ```
+2. Accédez à la racine du projet (le dossier contenant `.github`, `client`, et `server`).  
+3. Ouvrez un terminal PowerShell.  
+4. Lancez la commande suivante :  
+   ```bash
+   docker-compose up --build
+   ```
+5. Une fois le chargement terminé, vous verrez :  
+   - 🚀 **Serveur lancé sur [http://localhost:3000](http://localhost:3000)**.  
+   - ✅ **Connecté à MongoDB**.  
+
+---
+
+## 📖 Documentation API Swagger
+
+La documentation API est accessible à l'adresse suivante : [http://localhost:3000/api/documentation](http://localhost:3000/api/documentation) lorsque l'application est démarrée via Docker.  
+Elle utilise **Swagger-ui-express** et un fichier `swagger.json` situé dans le dossier `server`, avec une configuration simplifiée en deux lignes de code dans server.ts.
+
+Notre documentation API est disponible ici directement si vous voulez la visualiser sans lancer l'application :  
+[**Documentation SWAGGER**](https://app.swaggerhub.com/apis-docs/NATHANLANTZ57560/SAE5/1.0.0)
