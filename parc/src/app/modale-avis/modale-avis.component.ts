@@ -1,11 +1,12 @@
 import { Component, Inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { MAT_DIALOG_DATA, MatDialogRef, MatDialogModule } from '@angular/material/dialog';
+import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { MAT_DIALOG_DATA, MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatButtonModule } from '@angular/material/button';
+import { AvisService } from '../Service/avis.service';
 
 @Component({
   selector: 'app-modale-avis',
@@ -28,7 +29,8 @@ export class ModaleAvisComponent {
   constructor(
     private fb: FormBuilder,
     private dialogRef: MatDialogRef<ModaleAvisComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: { attractionNom: string }
+    @Inject(MAT_DIALOG_DATA) public data: { attractionNom: string, attractionId: number },
+    private avisService: AvisService
   ) {
     this.avisForm = this.fb.group({
       texte: ['', [Validators.required, Validators.minLength(10)]],
@@ -40,7 +42,14 @@ export class ModaleAvisComponent {
   }
 
   soumettreAvis() {
-    const avis = this.avisForm.value;
-    this.dialogRef.close(avis); // Retourne les données à l'appelant
+    const avis = {
+      attraction_id: this.data.attractionId,
+      ...this.avisForm.value
+    };
+
+    this.avisService.ajouterAvis(avis).subscribe(response => {
+      console.log('Avis ajouté:', response);
+      this.dialogRef.close(avis);
+    });
   }
 }

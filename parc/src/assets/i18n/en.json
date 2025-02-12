@@ -1,0 +1,11 @@
+{
+  "WELCOME": "Welcome to the amusement park website",
+  "LANGUAGE": "Language",
+  "HOME.TITLE": "Home",
+  "ATTRACTION.NAME": "Name",
+  "ATTRACTION.DESCRIPTION": "Description",
+  "ATTRACTION.DIFFICULTY": "Difficulty",
+  "ATTRACTION.ACTIONS": "Actions",
+  "ATTRACTION.ADD_REVIEW": "Add a review",
+  "ATTRACTION.VIEW_REVIEWS": "View reviews"
+}

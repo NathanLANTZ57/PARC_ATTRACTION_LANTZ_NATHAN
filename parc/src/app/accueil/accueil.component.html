@@ -1,15 +1,22 @@
 <mat-card class="accueil-card">
   <mat-card-header>
-    <mat-card-title>Bienvenue sur le site internet du parc d'attraction</mat-card-title>
+    <mat-card-title>{{ 'WELCOME' | translate }}</mat-card-title>
+
+    <!-- Boutons de changement de langue -->
+    <div class="lang-buttons">
+      <button class="lang-button" (click)="changeLanguage('fr')">🇫🇷 Français</button>
+      <button class="lang-button" (click)="changeLanguage('en')">🇬🇧 English</button>
+    </div>
   </mat-card-header>
+  
   <mat-card-content>
     <div class="attraction-title">
-      <span>Nom</span>
-      <span>Description</span>
-      <span>Difficulté</span>
-      <span>Actions</span>
+      <span>{{ 'ATTRACTION.NAME' | translate }}</span>
+      <span>{{ 'ATTRACTION.DESCRIPTION' | translate }}</span>
+      <span>{{ 'ATTRACTION.DIFFICULTY' | translate }}</span>
+      <span>{{ 'ATTRACTION.ACTIONS' | translate }}</span>
     </div>
-    <ng-container *ngFor="let attraction of attractions | async;">
+    <ng-container *ngFor="let attraction of attractions | async">
       <div class="attraction">
         <span>{{ attraction.nom }}</span>
         <span>{{ attraction.description }}</span>
@@ -17,10 +24,10 @@
 
         <div class="buttons">
           <button class="mettre-avis" (click)="ajouterAvis(attraction.nom)">
-            <mat-icon>edit</mat-icon> Mettre un avis
+            <mat-icon>edit</mat-icon> {{ 'ATTRACTION.ADD_REVIEW' | translate }}
           </button>
-          <button class="voir-avis" (click)="voirAvis(attraction.nom)">
-            <mat-icon>visibility</mat-icon> Voir les avis
+          <button class="voir-avis" (click)="attraction.attraction_id !== null ? voirAvis(attraction.attraction_id) : null">
+            <mat-icon>visibility</mat-icon> {{ 'ATTRACTION.VIEW_REVIEWS' | translate }}
           </button>
         </div>
       </div>

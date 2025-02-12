@@ -17,3 +17,16 @@ CREATE TABLE users (
     name varchar(255) not null,
     password varchar(255) not null
 );
+
+DROP TABLE IF EXISTS avis;
+
+CREATE TABLE avis (
+    avis_id INT AUTO_INCREMENT PRIMARY KEY,
+    attraction_id INT,
+    texte TEXT NOT NULL,
+    note INT CHECK (note BETWEEN 1 AND 5),
+    nom VARCHAR(255),
+    prenom VARCHAR(255),
+    anonyme BOOLEAN DEFAULT false,
+    FOREIGN KEY (attraction_id) REFERENCES attraction(attraction_id) ON DELETE CASCADE
+);

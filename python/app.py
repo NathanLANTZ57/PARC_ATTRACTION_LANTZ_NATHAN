@@ -4,6 +4,7 @@ from flask_cors import CORS
 import request.request as req
 import controller.auth.auth as user
 import controller.attraction as attraction
+import controller.avis as avis
 
 app = Flask(__name__)
 CORS(app)
@@ -67,3 +68,12 @@ def login():
 
     result = jsonify({"token": user.encode_auth_token(list(records[0])[0]), "name": json['name']})
     return result, 200
+
+@app.post('/avis')
+def ajouter_avis():
+    json = request.get_json()
+    return avis.add_avis(json)
+
+@app.get('/avis/<string:id>')
+def voir_avis(id):
+    return avis.get_avis(id)

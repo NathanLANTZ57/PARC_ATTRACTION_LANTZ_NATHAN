@@ -9,6 +9,7 @@
   text-align: left;
   display: flex;
   justify-content: space-between;
+  max-width: 100%;
 
   span {
     flex: 1;
@@ -24,6 +25,7 @@
   padding: 12px 15px;
   border-bottom: 1px solid #ddd;
   transition: background 0.3s ease;
+  width: 100%;
 
   &:hover {
     background: #f7f7f7;
@@ -85,5 +87,29 @@
         background-color: #c60055;
       }
     }
+  }
+}
+
+/* 🔹 Correction : Déplacement des boutons de langue hors de .buttons */
+.lang-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.lang-button {
+  padding: 8px 12px;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  background-color: #4CAF50; /* Couleur verte */
+  color: white;
+
+  &:hover {
+    background: #45a049;
   }
 }

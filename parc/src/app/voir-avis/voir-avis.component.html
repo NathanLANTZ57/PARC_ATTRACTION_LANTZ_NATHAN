@@ -1,0 +1,22 @@
+<mat-card *ngIf="avis.length > 0; else noAvis" class="avis-card">
+  <mat-card-header>
+    <mat-card-title>Avis pour l'attraction</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <div *ngFor="let avisItem of avis" class="avis-item">
+      <p>Note : ⭐ {{ avisItem.note }} / 5</p>
+      <p>{{ avisItem.texte }}</p>
+      <p *ngIf="avisItem.nom">Publié par : {{ avisItem.nom }} {{ avisItem.prenom }}</p>
+      <p *ngIf="avisItem.anonyme">Publié anonymement</p>
+      <hr />
+    </div>
+  </mat-card-content>
+</mat-card>
+
+<ng-template #noAvis>
+  <mat-card class="avis-card">
+    <mat-card-header>
+      <mat-card-title>Aucun avis disponible</mat-card-title>
+    </mat-card-header>
+  </mat-card>
+</ng-template>
