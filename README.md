@@ -41,7 +41,7 @@ Contient tout le code côté serveur, développé avec **Python**.
 
 1. Clonez le projet complet depuis GitHub ou alors télécharger le dossier en ZIP :  
    ```bash
-   git clone https://github.com/NathanLANTZ57/SAE5_LANTZ_CHEVALIER.git
+   git clone https://github.com/NathanLANTZ57/PARC_ATTRACTION_LANTZ_NATHAN.git
    ```
 2. Accédez à la racine du projet (le dossier contenant `parc`, et `python`).  
 3. Ouvrez un terminal PowerShell.  
