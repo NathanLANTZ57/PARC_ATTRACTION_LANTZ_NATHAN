@@ -1,5 +1,5 @@
 # 🎢 PARC_ATTRACTION - Lantz Nathan  
-**Auteurs** : CHEVALIER Noemy & LANTZ Nathan  
+**Auteurs** : LANTZ Nathan 
 
 ## 🚀 Environnement utilisé  
 - **GitHub** et **Docker** pour la gestion du projet et des conteneurs.  
