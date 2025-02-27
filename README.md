@@ -62,41 +62,41 @@ Contient tout le code côté serveur, développé avec **Python**.
 
 ---
 
-## 🚀 Améliorations futures possible
+## 🚀 Améliorations futures
 
-Voici quelques pistes d'amélioration pour rendre l'application plus complète et optimisée :
+Voici quelques pistes d'amélioration pour rendre l'application plus complète et optimisée, avec une estimation du temps nécessaire pour chaque tâche :
 
 ### 🎨 1. Expérience utilisateur (UX/UI)
-- **Amélioration du design** avec un style plus moderne et attractif.
-- **Ajout d'un mode sombre** pour améliorer le confort visuel des utilisateurs.
-- **Mise en place d'une accessibilité améliorée** (prise en charge des lecteurs d'écran, contraste renforcé, navigation clavier).
+- **Amélioration du design** avec un style plus moderne et attractif _(3-5 jours)_.
+- **Ajout d'un mode sombre** pour améliorer le confort visuel des utilisateurs _(2 jours)_.
+- **Mise en place d'une accessibilité améliorée** (prise en charge des lecteurs d'écran, contraste renforcé, navigation clavier) _(4-6 jours)_.
 
 ### 🌍 2. Fonctionnalités supplémentaires
-- **Ajout d’un système de favoris** permettant aux utilisateurs de sauvegarder leurs attractions préférées.
-- **Ajout d'un système de notation plus détaillé** (ex : critères comme l'attente, la qualité de l'attraction, etc.).
-- **Mise en place d’un système de commentaires avec réponses** pour permettre des discussions entre utilisateurs.
-- **Possibilité d’ajouter des photos et vidéos aux avis** pour enrichir les retours des visiteurs.
+- **Ajout d’un système de favoris** permettant aux utilisateurs de sauvegarder leurs attractions préférées _(3 jours)_.
+- **Ajout d'un système de notation plus détaillé** (ex : critères comme l'attente, la qualité de l'attraction, etc.) _(3-5 jours)_.
+- **Mise en place d’un système de commentaires avec réponses** pour permettre des discussions entre utilisateurs _(5-7 jours)_.
+- **Possibilité d’ajouter des photos et vidéos aux avis** pour enrichir les retours des visiteurs _(5-8 jours)_.
 
 ### 🔐 3. Sécurité et administration
-- **Ajout de l'authentification OAuth (Google, Facebook, etc.)** pour simplifier l'inscription et la connexion.
-- **Gestion des rôles et permissions** pour permettre aux administrateurs de modérer les avis.
-- **Ajout d'un système de signalement des avis** en cas de contenu inapproprié.
+- **Ajout de l'authentification OAuth (Google, Facebook, etc.)** pour simplifier l'inscription et la connexion _(4-6 jours)_.
+- **Gestion des rôles et permissions** pour permettre aux administrateurs de modérer les avis _(3-5 jours)_.
+- **Ajout d'un système de signalement des avis** en cas de contenu inapproprié _(3-4 jours)_.
 
 ### 🌐 4. Internationalisation et localisation
-- **Ajout de nouvelles langues** en plus du français et de l’anglais (ex : espagnol, allemand, etc.).
-- **Détection automatique de la langue de l'utilisateur** selon ses préférences de navigateur.
+- **Ajout de nouvelles langues** en plus du français et de l’anglais (ex : espagnol, allemand, etc.) _(4-7 jours, selon le nombre de langues)_.
+- **Détection automatique de la langue de l'utilisateur** selon ses préférences de navigateur _(2 jours)_.
 
 ### ⚡ 5. Performance et optimisation
-- **Optimisation du chargement des attractions** via une pagination ou un chargement infini.
-- **Mise en place d’un système de mise en cache** pour réduire les appels API et accélérer l’affichage des attractions.
-- **Amélioration de la base de données** pour optimiser les requêtes et éviter les ralentissements.
+- **Optimisation du chargement des attractions** via une pagination ou un chargement infini _(3-4 jours)_.
+- **Mise en place d’un système de mise en cache** pour réduire les appels API et accélérer l’affichage des attractions _(3-5 jours)_.
+- **Amélioration de la base de données** pour optimiser les requêtes et éviter les ralentissements _(4-6 jours)_.
 
 ### 📱 6. Accessibilité mobile
-- **Développement d’une version mobile optimisée** ou d’une application mobile avec **React Native**.
-- **Ajout d'un mode hors-ligne** permettant de consulter les attractions sans connexion Internet.
+- **Développement d’une version mobile optimisée** ou d’une application mobile avec **React Native** _(7-15 jours)_.
+- **Ajout d'un mode hors-ligne** permettant de consulter les attractions sans connexion Internet _(5-8 jours)_.
 
 ### 📊 7. Statistiques et analyse
-- **Ajout d’un tableau de bord admin** pour suivre les avis, les attractions les plus populaires et les tendances des utilisateurs.
-- **Mise en place de Google Analytics** pour suivre l'activité des visiteurs et améliorer l'expérience utilisateur.
+- **Ajout d’un tableau de bord admin** pour suivre les avis, les attractions les plus populaires et les tendances des utilisateurs _(6-10 jours)_.
+- **Mise en place de Google Analytics** pour suivre l'activité des visiteurs et améliorer l'expérience utilisateur _(2-3 jours)_.
 
 Ces améliorations permettront d'enrichir l'expérience utilisateur et d'optimiser le fonctionnement de l'application. 🚀
