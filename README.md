@@ -49,3 +49,13 @@ Contient tout le code côté serveur, développé avec **Python**.
    ```bash
    docker-compose up --build
    ```
+5. Dans un terminal dans le fichier /python faire la commande suivante pour la bdd :  
+   ```bash
+   Python3 init.py
+   ```
+
+--- 
+
+### 🗄️ 4. Schéma de la base de données
+
+![bdd parc](bddparc.PNG)
